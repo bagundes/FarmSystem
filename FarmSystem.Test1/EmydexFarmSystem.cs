@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FarmSystem.Test2;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FarmSystem.Test1
 {
@@ -21,13 +23,18 @@ namespace FarmSystem.Test1
         public void MakeNoise()
         {
             //Test 2 : Modify this method to make the animals talk
-            Console.WriteLine("There are no animals in the farm");
+            //Console.WriteLine("There are no animals in the farm");
+
+            foreach (var animal in Animals)
+                animal.Talk();
+
         }
 
         //TEST 3
         public void MilkAnimals()
         {
-            Console.WriteLine("Cannot identify the farm animals which can be milked");
+            var milk = Animals.Where(t => t is IMilkableAnimal).ToArray();
+
         }
 
         //TEST 4
