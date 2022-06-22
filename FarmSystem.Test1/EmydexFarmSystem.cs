@@ -9,6 +9,9 @@ namespace FarmSystem.Test1
     {
         private List<Animal> Animals = new List<Animal>();
 
+        public event FarmEmptyHandler FarmEmpty;
+        public bool IsEmpty => Animals.Count == 0;
+
 
         //TEST 1
         public void Enter(Animal animal)
@@ -41,7 +44,17 @@ namespace FarmSystem.Test1
         //TEST 4
         public void ReleaseAllAnimals()
         {
-           Console.WriteLine("There are still animals in the farm, farm is not free");
+            while (Animals.Count > 0)
+            {
+                Console.WriteLine($"{Animals[0].AnimalType} has left the farm");
+                Animals.RemoveAt(0);
+            }
+
+            FarmEmpty(this);
         }
+
+        public delegate void FarmEmptyHandler(object source);
+            
+
     }
 }

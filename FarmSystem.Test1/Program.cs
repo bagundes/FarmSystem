@@ -165,6 +165,8 @@ Emydex Farm is now empty
             Console.WriteLine("Exercise 4: Press any key to free all animals");
             Console.ReadKey();
             var farm = new EmydexFarmSystem();
+            farm.FarmEmpty += new EmydexFarmSystem.FarmEmptyHandler(FarmEmpty);
+
             Cow cow = new Cow();
             cow.Id = Guid.NewGuid().ToString();
             cow.NoOfLegs = 4;
@@ -187,6 +189,11 @@ Emydex Farm is now empty
 
             farm.ReleaseAllAnimals();
             Console.ReadKey();
+        }
+
+        static void FarmEmpty(object source)
+        {
+            Console.WriteLine($"Emydex Farm is now empty");
         }
 
     }
