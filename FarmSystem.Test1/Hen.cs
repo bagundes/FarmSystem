@@ -11,9 +11,5 @@ namespace FarmSystem.Test1
             Console.WriteLine("Hen say CLUCKAAAAAWWWWK!");
         }
 
-        public override void Run()
-        {
-            Console.WriteLine("Hen is running");
-        }
     }
 }

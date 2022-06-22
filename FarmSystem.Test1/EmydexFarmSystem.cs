@@ -33,7 +33,8 @@ namespace FarmSystem.Test1
         //TEST 3
         public void MilkAnimals()
         {
-            var milk = Animals.Where(t => t is IMilkableAnimal).ToArray();
+            foreach (var milk in Animals.Where(t => t is IMilkableAnimal).ToArray())
+                ((IMilkableAnimal) milk).ProduceMilk();
 
         }
 

@@ -21,10 +21,5 @@ namespace FarmSystem.Test1
             Console.WriteLine("Cow produced milk");
         }
 
-        public override void Run()
-        {
-            Console.WriteLine("Cow is running");
-        }
-
     }
 }

@@ -41,6 +41,9 @@ namespace FarmSystem.Test1
 
         public abstract void Talk();
 
-        public abstract void Run();
+        public void Run()
+        {
+            Console.WriteLine($"{AnimalType} is running");
+        }
     }
 }

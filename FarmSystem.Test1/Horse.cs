@@ -9,12 +9,6 @@ namespace FarmSystem.Test1
         public override void Talk()
         {
             Console.WriteLine("Horse says neigh!");
-        }
-
-        public override void Run()
-        {
-            Console.WriteLine("Horse is running");
-        }
-        
+        }        
     }
 }

@@ -10,10 +10,6 @@ namespace FarmSystem.Test1
             Console.WriteLine("Sheep says baa!");
         }
         
-        public override void Run()
-        {
-            Console.WriteLine("Sheep is running");
-        }
     }
 
 }
